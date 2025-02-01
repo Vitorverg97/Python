@@ -8,7 +8,7 @@ def avarage ():
     avg = (Rate1 + Rate2)/2
     if avg >= 7:
         print(f"Você está aprovado com média: {avg}")
-    elif avg >= 5 and avg < 7 :
+    elif avg > 5 and avg < 7 :
         print(f'Você está de recuperação com média: {avg}')
     else :
         print(f'Você está reprovado com média: {avg}')
