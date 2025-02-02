@@ -24,3 +24,27 @@ for numerosNaturais in range(5,21,5):
     print(numerosNaturais) 
 
 #___EXERCISE___#
+
+## Faça um programa que gere uma tabuada. O programa deverá perguntar ao usuário qual será a tabuada e até qual valor (geramente do inicia-se do 0 ao 10)
+
+tabuada = int(input("Qual tabuada queres? "))
+intervalo = int(input("Até qual número será o fim da tabuada? "))
+
+for numero in range(0, intervalo+1):
+    print(f"{tabuada} X {numero}= {numero*tabuada}")
+
+## Faça um programa que calcule o enésimo elemento da série de Fibonacci. Lembrando que a série começa da seguinte forma: 1,1,2,3,5,8,13,21,34,55...
+
+n = int(input("Digite qual termo da sequência Fibonacci deve ser mostrado: "))
+primeiro = 1
+segundo = 1
+
+if n==1 or n==2:
+    print('1')
+
+else:
+    for _ in range(2,n):
+        elemento = primeiro + segundo
+        segundo = primeiro
+        primeiro = elemento
+    print(elemento)
