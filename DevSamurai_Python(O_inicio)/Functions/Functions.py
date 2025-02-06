@@ -2,7 +2,6 @@
 
 #Obs: Documentar a função (Docstring) é uma boa prática de programação.
 
-
 # Função sem retorno e sem passagem de parâmetro
 def olaMundo ():
 	'Função que imprime um mensagem padrão.'
@@ -19,8 +18,10 @@ nome = input("Qual é o seu nome? ")
 ola_mundo()
 
 #Função com retorno com passagem de parâmetros
+
 def soma(a,b):
     'Função que recebe dois números do usuário e realiza a soma entre eles.'
+    
     return a + b
 a = int(input("Insira o primeiro valor: "))
 b = int(input("Insira o segundo valor: "))
@@ -31,30 +32,41 @@ print(resultadoSoma)
 # __Exercícios__ #
 
 ## Escreva uma função que calcule o quadrado do número passado como parâmetro. Se nenhum número for passado use como padrão o número 5.
-#number = (input("Qual número deseja elevar ao quadrado? "))
-#def potenciaQuadrada(numero = 5):
-    
-#    if number == '':
-#        print(pow(numero,2))
-#    else:
-#        print(pow(number, 2))
+def potenciaQuadrada(numero = 5):
+    'Função que calcula a exponêciação quadrática de um número inserido como parâmetro. A função também conta com um valor default "5".'
+
+    return pow(numero,2)
+
+resultado = potenciaQuadrada(6)
+print(f"O resultado é: {resultado}")
 
 ## Escreva uma função que receba como parâmetro uma temperatura em graus Fahrenheit e converta para graus Celsius.
-def temperatureConverter(fTemp):
-    fTemp = int(input("Para converter em °C. Insira o valor em °F: "))
-    cTemp = (fTemp - 32)/1.8
-    return cTemp
+def temperatureConverter():
+    'Função que converte a temperatura em °F para °C, através do input do usuário'
+    
+    User_Input = input("Insira o valor em °F, para converter em Graus Celsius: ")
+    F_Temp = float(User_Input)
+    C_Temp = (F_Temp - 32)/1.8
+    return C_Temp
 
-cToFTemp = temperatureConverter(fTemp = int)
-print(f'{cToFTemp:.1f}°C')
+CelsiusConverted = temperatureConverter()
+print(f'{CelsiusConverted:.1f}°C')
 
 ## Escreva uma função que receba dois parâmetros. O primeiro será uma palavra, se ela for quadrado deverá calcular o quadrado do número passado como segundo parâmetro. Se a palavra for cubo deverá realizar o calculo do cubo do número passado.
-
-def potenciacao(quadrado, cubo):
-    recebendoValores = input("Qual potenciação escolhes? 'quadrado' ou 'cubo?' ")
-    if recebendoValores == 'quadrado':
-        quadrado = pow(recebendoValores, 2)
-    elif recebendoValores == 'cubo':
-        cubo = pow(recebendoValores, 3)
-    print(quadrado or cubo)
+def potenciacao():
+    'Função que faz o cálculo da potênciação, através da inserção do índiçe (Quadrado ou Cubo) e valor pelo usuário.'
+   
+    decisao = input("Escolha o índice da potênciação --> 'quadrado' ou 'cubo': ").strip().lower()
     
+    if decisao == 'quadrado':
+        valor = int(input("Insira o valor que desejas potencializar quadráticamente: "))
+        return pow(valor, 2)
+    
+    elif decisao == 'cubo':
+        valor = int(input("Insira o valor que desejas potencializar cúbicamente: "))
+        return pow(valor, 3)
+    
+    else:
+        return "Opção inválida. Escolha 'quadrado' ou 'cubo'."
+resultadoPot = potenciacao()
+print(f'O resultado é: {resultadoPot}')
